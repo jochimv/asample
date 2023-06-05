@@ -1,0 +1,7 @@
+---
+- name: Test playbook
+  hosts: vm_machines
+  become: yes
+  tasks:
+    - name: Run a command on the remote host
+      shell: echo "Hello, world!"
