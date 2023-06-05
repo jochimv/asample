@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Add the remote host to the known hosts file
+      known_hosts:
+        name: "146.102.194.127"
+        key: "{{ lookup('pipe', 'ssh-keyscan -H 146.102.194.127') }}"
+        state: present
